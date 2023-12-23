@@ -2,7 +2,6 @@
   <% if post.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <p><b><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</b></p>
-
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>

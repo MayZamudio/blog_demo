@@ -1,6 +1,12 @@
 <div class="container my-5 col-lg-8 col-md-8 justify-content-center">
   <div class="p-5 rounded-3"  style="--bs-bg-opacity: 1; background-color: rgba(248,249,250, 1)!important;">
     <h2 class="text-body-emphasis"><%= @post.title %></h2>
+    <h6 class="text-body-secondary" style="color: #6c757d;">
+      posted by <%= link_to @post.user.name, user_path(@post.user) %> 
+    </h6>
+    <h6>
+      <%= pluralize(@post.views, "view") %>
+    </h6>
     <p class="lead">
       <%= @post.body %>
     </p>
@@ -10,7 +16,6 @@
       <%= link_to edit_post_path(@post), class: "btn btn-outline-secondary", role: "button" do %>
       <i class="bi bi-pen"></i>
       Edit
-      <span class="visually-hidden">Button</span>
       <% end %>
       <%= link_to posts_path, class: "btn btn-outline-secondary", role: "button" do %>
       <i class="bi bi-house-door"></i>
