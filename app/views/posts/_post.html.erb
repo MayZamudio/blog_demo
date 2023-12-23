@@ -2,6 +2,12 @@
   <h2 class="text-body-emphasis">
     <%= post.title %>
   </h2>
+  <h6 class="text-body-secondary" style="color: #6c757d;">
+    posted by <%= link_to post.user.name, user_path(post.user) %> 
+  </h6>
+  <h6>
+    <%= pluralize(post.views, "view") %>
+  </h6>
 
   <p class="lead">
     <%= truncate(post.body, length: 200) %>
