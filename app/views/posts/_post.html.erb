@@ -1,0 +1,10 @@
+<div id="<%= dom_id post %>">
+  <h2 class="text-body-emphasis">
+    <%= post.title %>
+  </h2>
+
+  <p class="lead">
+    <%= truncate(post.body, length: 200) %>
+  </p>
+
+</div>
