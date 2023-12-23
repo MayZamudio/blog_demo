@@ -1,0 +1,29 @@
+<div class="container my-5 col-lg-8 col-md-8 justify-content-center">
+  <div class="p-5 rounded-3"  style="--bs-bg-opacity: 1; background-color: rgba(248,249,250, 1)!important;">
+    <h2 class="text-body-emphasis"><%= @post.title %></h2>
+    <p class="lead">
+      <%= @post.body %>
+    </p>
+  </div>
+  <div class="p-5 rounded-3 d-flex justify-content-between" >
+    <div class="btn-group">
+      <%= link_to edit_post_path(@post), class: "btn btn-outline-secondary", role: "button" do %>
+      <i class="bi bi-pen"></i>
+      Edit
+      <span class="visually-hidden">Button</span>
+      <% end %>
+      <%= link_to posts_path, class: "btn btn-outline-secondary", role: "button" do %>
+      <i class="bi bi-house-door"></i>
+      Back to Posts
+      <% end %>
+    </div>
+    <div>
+      <%= button_to @post, method: :delete, class: 'btn btn-danger' do %>
+      <i class="bi bi-trash3"></i>
+      Delete Post
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

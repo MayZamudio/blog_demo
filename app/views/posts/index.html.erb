@@ -1,0 +1,22 @@
+<div class="container my-5">
+  <p style="color: green"><%= notice %></p>
+
+  <h1>Posts</h1>
+
+  <div id="posts" class="mt-4">
+    <% @posts.each do |post| %>
+      <%= render post %>
+      <div class="mb-5">
+        <%= link_to post, class: "btn btn-outline-secondary btn-sm", role: "button" do %>
+            View Post
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="mt-5">
+    <%= link_to new_post_path, class: "btn btn-dark btn-sm", role: "button" do %>
+            New Post
+          <% end %>
+  </div>
+</div>
