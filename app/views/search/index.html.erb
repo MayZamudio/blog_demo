@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="text-center"> <%= pluralize(@posts.count, "Result") %> </h1>
+    <p>Find me in app/views/search/index.html.erb</p>
+    
+</div>
+
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> <%= sort_link(@query, :title, "Title", default_order: :asc) %> </th>
+                <th> <%= sort_link(@query, :body, "Blog Content") %> </th>
+                <th> <%= sort_link(@query, :user_name, "Users") %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @posts.each do |post| %>
+                <tr>
+                    <th> <%= link_to post.title, post %> </th>
+                    <td> <%= post.body.truncate_words(25) %> </td>
+                    <th> <%= link_to post.user.name, post.user %> </th>
+                </tr>
+            <% end %>
+        </tbody>
+
+    </table>
+</div>
